@@ -1,0 +1,14 @@
+node_modules
+dist
+build
+out
+.next
+coverage
+package-lock.json
+frontend/.next
+frontend/dist
+frontend/build
+backend/dist
+backend/node_modules
+frontend/node_modules
+backend/prisma/migrations
