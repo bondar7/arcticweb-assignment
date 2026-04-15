@@ -8,6 +8,7 @@ import { toast } from 'sonner';
 
 import { type Lead, updateLead } from '@/lib/api/leads';
 import { getFriendlyErrorMessage } from '@/lib/api/errors';
+import { copyToClipboard } from '@/lib/copy-to-clipboard';
 import {
   buildUpdateLeadPayload,
   editLeadFormSchema,
@@ -106,10 +107,11 @@ export function LeadEditForm({ lead, onLeadUpdated }: LeadEditFormProps) {
   const statusBadgeClass = getLeadStatusClassName(lead.status);
 
   const copyLeadId = async () => {
-    try {
-      await navigator.clipboard.writeText(lead.id);
+    const copiedSuccessfully = await copyToClipboard(lead.id);
+
+    if (copiedSuccessfully) {
       toast.success('Lead ID copied');
-    } catch {
+    } else {
       toast.error('Unable to copy right now.');
     }
   };

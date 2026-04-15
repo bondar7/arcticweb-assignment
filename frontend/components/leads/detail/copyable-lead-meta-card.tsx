@@ -4,6 +4,8 @@ import type { ReactNode } from 'react';
 import { useEffect, useRef, useState } from 'react';
 import { Check, Copy } from 'lucide-react';
 import { toast } from 'sonner';
+
+import { copyToClipboard } from '@/lib/copy-to-clipboard';
 import { cn } from '@/lib/utils';
 
 type CopyableLeadMetaCardProps = {
@@ -45,8 +47,9 @@ export function CopyableLeadMetaCard({
       return;
     }
 
-    try {
-      await navigator.clipboard.writeText(textToCopy);
+    const copiedSuccessfully = await copyToClipboard(textToCopy);
+
+    if (copiedSuccessfully) {
       setCopied(true);
       toast.success(`${label} copied`);
 
@@ -57,7 +60,7 @@ export function CopyableLeadMetaCard({
       resetTimeoutRef.current = window.setTimeout(() => {
         setCopied(false);
       }, 1400);
-    } catch {
+    } else {
       toast.error('Unable to copy right now.');
     }
   }
