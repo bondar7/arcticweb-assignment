@@ -33,4 +33,4 @@ COPY --from=build /app/node_modules ./node_modules
 
 EXPOSE 3002
 
-CMD ["node", "backend/dist/main.js"]
+CMD ["sh", "-c", "npx prisma migrate deploy --schema backend/prisma/schema.prisma && node backend/dist/main.js"]
