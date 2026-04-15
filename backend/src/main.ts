@@ -35,9 +35,10 @@ async function bootstrap() {
 
   const swaggerConfig = new DocumentBuilder()
     .setTitle('Lead Tracker API')
-    .setDescription('Infrastructure-only API for the Lead Tracker assignment')
+    .setDescription(
+      'Lead Tracker API with lead CRUD and lead comments endpoints',
+    )
     .setVersion('0.1.0')
-    .addBearerAuth()
     .build();
 
   const document = SwaggerModule.createDocument(app, swaggerConfig, {
@@ -46,9 +47,6 @@ async function bootstrap() {
 
   SwaggerModule.setup('docs', app, document, {
     useGlobalPrefix: true,
-    swaggerOptions: {
-      persistAuthorization: true,
-    },
   });
 
   await app.listen(port);
