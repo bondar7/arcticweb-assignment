@@ -46,9 +46,7 @@ export class LeadsController {
   @ApiOperation({ summary: 'List leads' })
   @ApiOkResponse({ type: LeadListResponseDto })
   @ApiBadRequestResponse({ description: 'Invalid query parameters' })
-  listLeads(
-    @Query() query: ListLeadsQueryDto,
-  ): Promise<LeadListResponseDto> {
+  listLeads(@Query() query: ListLeadsQueryDto): Promise<LeadListResponseDto> {
     return this.leadsService.listLeads(query);
   }
 
