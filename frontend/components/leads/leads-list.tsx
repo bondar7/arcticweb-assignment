@@ -89,7 +89,10 @@ function LeadMobileCard({ lead }: { lead: Lead }) {
 
           <dl className="grid gap-3">
             <LeadMobileMetaItem label="Company" value={lead.company ?? '—'} />
-            <LeadMobileMetaItem label="Value" value={formatLeadValue(lead.value)} />
+            <LeadMobileMetaItem
+              label="Value"
+              value={formatLeadValue(lead.value)}
+            />
             <LeadMobileMetaItem
               label="Updated"
               value={formatLeadDate(lead.updatedAt)}

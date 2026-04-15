@@ -38,9 +38,9 @@ function toMessageArray(value: unknown): string[] {
   }
 
   if (Array.isArray(value)) {
-    return value.flatMap((entry) =>
-      typeof entry === 'string' ? [entry.trim()] : [],
-    ).filter(Boolean);
+    return value
+      .flatMap((entry) => (typeof entry === 'string' ? [entry.trim()] : []))
+      .filter(Boolean);
   }
 
   return [];
@@ -99,9 +99,10 @@ export function normalizeApiError(error: unknown): NormalizedApiError {
       message,
       messages: messages.length > 0 ? messages : [message],
       statusCode,
-      error: isPlainObject(rawData) && typeof rawData.error === 'string'
-        ? rawData.error
-        : null,
+      error:
+        isPlainObject(rawData) && typeof rawData.error === 'string'
+          ? rawData.error
+          : null,
       isNetworkError: !error.response,
       isAbortError: error.code === 'ERR_CANCELED',
       raw: rawData ?? error,

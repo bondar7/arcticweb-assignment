@@ -18,10 +18,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog';
-import {
-  getLeads,
-  type LeadListResponse,
-} from '@/lib/api/leads';
+import { getLeads, type LeadListResponse } from '@/lib/api/leads';
 import { getFriendlyErrorMessage } from '@/lib/api/errors';
 import type { LeadListMeta } from '@/lib/types/leads';
 
@@ -122,9 +119,7 @@ export function LeadsWorkspace() {
           </CardHeader>
           <CardContent className="pt-0">
             <p className="text-sm text-muted-foreground">
-              {loading
-                ? 'Loading leads...'
-                : getLeadCountLabel(listMeta.total)}
+              {loading ? 'Loading leads...' : getLeadCountLabel(listMeta.total)}
             </p>
           </CardContent>
         </Card>

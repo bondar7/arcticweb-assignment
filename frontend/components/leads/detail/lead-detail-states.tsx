@@ -36,7 +36,8 @@ export function LeadNotFoundState({
           <div
             className={cn(
               'flex items-center gap-2 text-sm font-semibold text-muted-foreground',
-              centered && 'justify-center text-xs font-medium text-muted-foreground/70',
+              centered &&
+                'justify-center text-xs font-medium text-muted-foreground/70',
             )}
           >
             <FileText className={cn('h-4 w-4', centered && 'h-3 w-3')} />
@@ -56,7 +57,10 @@ export function LeadNotFoundState({
         </div>
       </CardHeader>
       <CardContent
-        className={cn('flex flex-wrap gap-3', centered && 'justify-center pt-1')}
+        className={cn(
+          'flex flex-wrap gap-3',
+          centered && 'justify-center pt-1',
+        )}
       >
         <Button asChild>
           <Link href={href}>
@@ -176,4 +180,3 @@ export function LeadCommentsEmptyState() {
     </div>
   );
 }
-

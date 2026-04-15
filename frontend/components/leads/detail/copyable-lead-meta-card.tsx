@@ -87,7 +87,9 @@ export function CopyableLeadMetaCard({
         <p
           className={cn(
             'mt-2 min-h-12 text-sm font-semibold leading-6',
-            isPlaceholder ? 'font-medium text-muted-foreground' : 'text-foreground',
+            isPlaceholder
+              ? 'font-medium text-muted-foreground'
+              : 'text-foreground',
             truncateValue
               ? 'overflow-hidden text-ellipsis whitespace-nowrap'
               : 'wrap-break-word',

@@ -148,9 +148,7 @@ function normalizeCreateString(value: string | undefined): string | undefined {
   return trimmed.length > 0 ? trimmed : undefined;
 }
 
-function normalizeUpdateString(
-  value: string | undefined,
-): string | undefined {
+function normalizeUpdateString(value: string | undefined): string | undefined {
   if (value === undefined) {
     return undefined;
   }

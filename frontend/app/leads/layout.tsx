@@ -38,4 +38,3 @@ function LeadsLayoutFallback() {
 export default function LeadsLayout({ children }: { children: ReactNode }) {
   return <Suspense fallback={<LeadsLayoutFallback />}>{children}</Suspense>;
 }
-

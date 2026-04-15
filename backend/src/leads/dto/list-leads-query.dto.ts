@@ -26,7 +26,9 @@ function toInteger(value: unknown, fallback: number): number {
 }
 
 function normalizeSortField(value: unknown): LeadSortField {
-  return value === undefined ? LeadSortField.CreatedAt : (value as LeadSortField);
+  return value === undefined
+    ? LeadSortField.CreatedAt
+    : (value as LeadSortField);
 }
 
 function normalizeSortOrder(value: unknown): SortOrder {

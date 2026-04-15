@@ -50,12 +50,7 @@ export function LeadsErrorState({
       </div>
 
       {onAction ? (
-        <Button
-          type="button"
-          variant="outline"
-          size="sm"
-          onClick={onAction}
-        >
+        <Button type="button" variant="outline" size="sm" onClick={onAction}>
           <RefreshCcw className="h-4 w-4" />
           {actionLabel}
         </Button>

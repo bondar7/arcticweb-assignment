@@ -3,7 +3,11 @@
 import { useEffect, useMemo, useState } from 'react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
-import type { LeadSortField, LeadSortOrder, LeadStatus } from '@/lib/types/leads';
+import type {
+  LeadSortField,
+  LeadSortOrder,
+  LeadStatus,
+} from '@/lib/types/leads';
 import {
   LEADS_DEFAULT_PAGE,
   LEADS_PAGE_SIZE,

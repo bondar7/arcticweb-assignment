@@ -39,5 +39,4 @@ export class LeadCommentsService {
 
     return toCommentResponse(comment);
   }
-
 }
