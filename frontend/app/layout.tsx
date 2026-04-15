@@ -1,5 +1,8 @@
 import type { Metadata } from 'next';
 import { Open_Sans } from 'next/font/google';
+import type { ReactNode } from 'react';
+
+import { Providers } from './providers';
 import './globals.css';
 
 const openSans = Open_Sans({
@@ -17,11 +20,13 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={openSans.variable}>{children}</body>
+      <body className={openSans.variable}>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }
