@@ -1,0 +1,127 @@
+@import 'tailwindcss';
+
+:root {
+  color-scheme: light;
+  --background: hsl(87 25% 96%);
+  --foreground: hsl(212 22% 8%);
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(212 22% 8%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(212 22% 8%);
+  --primary: hsl(77 100% 59%);
+  --primary-foreground: hsl(77 57% 9%);
+  --secondary: hsl(194 100% 92%);
+  --secondary-foreground: hsl(212 22% 8%);
+  --muted: hsl(214 24% 94%);
+  --muted-foreground: hsl(214 11% 43%);
+  --accent: hsl(80 100% 87%);
+  --accent-foreground: hsl(77 57% 9%);
+  --destructive: hsl(0 72% 51%);
+  --destructive-foreground: hsl(0 0% 98%);
+  --border: hsl(214 19% 85%);
+  --input: hsl(214 19% 85%);
+  --ring: hsl(79 100% 45%);
+  --radius: 0.5rem;
+  --brand: hsl(77 100% 59%);
+  --brand-foreground: hsl(77 57% 9%);
+  --brand-strong: hsl(79 100% 45%);
+  --brand-soft: hsl(80 100% 87%);
+  --brand-ink: hsl(77 57% 9%);
+  --cyan: hsl(195 100% 50%);
+  --cyan-foreground: hsl(212 22% 8%);
+  --cyan-soft: hsl(194 100% 89%);
+  --surface: hsl(0 0% 100%);
+  --surface-foreground: hsl(212 22% 8%);
+  --ink: hsl(212 22% 8%);
+  --ink-foreground: hsl(0 0% 98%);
+  --line: hsl(214 19% 85%);
+  --muted-ink: hsl(214 11% 43%);
+  --body-glow-lime: hsl(77 100% 59% / 0.16);
+  --body-glow-cyan: hsl(195 100% 50% / 0.14);
+  --body-base-top: hsl(97 48% 98%);
+  --body-base-bottom: hsl(87 25% 96%);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-brand: var(--brand);
+  --color-brand-foreground: var(--brand-foreground);
+  --color-brand-strong: var(--brand-strong);
+  --color-brand-soft: var(--brand-soft);
+  --color-brand-ink: var(--brand-ink);
+  --color-cyan: var(--cyan);
+  --color-cyan-foreground: var(--cyan-foreground);
+  --color-cyan-soft: var(--cyan-soft);
+  --color-surface: var(--surface);
+  --color-surface-foreground: var(--surface-foreground);
+  --color-ink: var(--ink);
+  --color-ink-foreground: var(--ink-foreground);
+  --color-line: var(--line);
+  --color-muted-ink: var(--muted-ink);
+  --font-sans: var(--font-open-sans), 'Open Sans', sans-serif;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --shadow-soft: 0 16px 48px hsl(212 22% 8% / 0.08);
+  --shadow-brand: 0 8px 22px hsl(77 100% 59% / 0.28);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply min-h-screen bg-background font-sans text-foreground antialiased;
+    letter-spacing: 0;
+    background-image:
+      radial-gradient(
+        circle at top left,
+        var(--body-glow-lime),
+        transparent 32%
+      ),
+      radial-gradient(
+        circle at 85% 15%,
+        var(--body-glow-cyan),
+        transparent 24%
+      ),
+      linear-gradient(180deg, var(--body-base-top), var(--body-base-bottom));
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-foreground;
+    letter-spacing: 0;
+  }
+
+  ::selection {
+    background: hsl(77 100% 59% / 0.35);
+    color: var(--brand-ink);
+  }
+}
