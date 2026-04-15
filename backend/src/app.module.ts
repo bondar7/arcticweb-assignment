@@ -3,6 +3,7 @@ import { ConfigModule } from '@nestjs/config';
 import { APP_GUARD } from '@nestjs/core';
 import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
 
+import { AppController } from './app.controller';
 import { LeadsModule } from './leads/leads.module';
 import { PrismaModule } from './prisma/prisma.module';
 import { validateEnvironment } from './config/environment.validation';
@@ -23,6 +24,7 @@ import { validateEnvironment } from './config/environment.validation';
     PrismaModule,
     LeadsModule,
   ],
+  controllers: [AppController],
   providers: [
     {
       provide: APP_GUARD,
